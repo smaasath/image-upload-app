@@ -1,20 +1,23 @@
-
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
 import { Link } from 'expo-router';
-import { useState } from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
+import { StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function Home() {
-
-
     return (
         <ThemedView style={styles.container}>
+            
+            {/* Open Camera */}
             <Link href="photo" asChild>
                 <TouchableOpacity style={styles.button}>
                     <ThemedText>Open Camera</ThemedText>
+                </TouchableOpacity>
+            </Link>
+
+            {/* Upload Images */}
+            <Link href="upload" asChild>
+                <TouchableOpacity style={{...styles.button, marginTop: 20}}>
+                    <ThemedText>Upload Images</ThemedText>
                 </TouchableOpacity>
             </Link>
 
